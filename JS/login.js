@@ -13,7 +13,7 @@ Swal.fire({
   confirmButtonText: `Go to drive`,
 }).then((result) => {
   if (result.value) {
-    window.location.href = `../../home.html`;
+    window.location.href = `home.html`;
   }
 });
 } 

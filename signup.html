@@ -21,20 +21,25 @@
             <span id="nametext">Full name</span>
             <input type="email"  id="signinput" name="email" placeholder="Enter you full name" required>
 
+            <span id="fullnametag"></span>
        <span id="emailtext">Email</span>
                     <input type="email" id="signemail" name="email" placeholder="Enter you email" required/>
+                    <span id="signmailtag"></span>
 
             <span id="pass">Password</span>
             <input type="password"  id="signpass" name="password" placeholder="********" required>
 
+            <span id="passwdtag"></span>
+
             <span id="conpass">Confirm Password</span>
             <input type="password"  id="consignpass" name="password" placeholder="********" required>
+                    <span id="confirmpasstag"></span>
 
 
             <button type="button" class="signbtn3" onclick="signupsuccess()">Sign up</button>
 
-            <span id="createacc">Already have an account?</span>
-            <a href="./login.html"><button type="button" class="Accbtn3">Login here</button></a>
+            <span id="createacc">Already have an account?<a id="loginlink" href="./login.html">Login here</a></span>
+            <a 
         </form>
         
         </div>
