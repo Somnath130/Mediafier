@@ -2,13 +2,13 @@
 *
 {
     font-family: 'Montserrat',
-    sans-serif;
-
-    
+    sans-serif;  
 }
 
 body{
       background-image: linear-gradient(45deg, #234B85, rgb(107, 186, 240));
+    background-repeat: none;
+    background-attachment: fixed;
 }
 div.container
 {
@@ -83,10 +83,6 @@ div.container
     border-radius: 5px;
 }
 
-.logemail:focus
-{
-    border: 2px solid blue;
-}
 #pass
 {
   position: absolute;
