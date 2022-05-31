@@ -23,13 +23,13 @@
                         />
                         <span id="emailtag"></span>
                     <span id="pass">Password</span>
-                    <input type="password" class="logpass" id="loginpasswd" name="password" placeholder="********"/>
+                    <input autocomplete="off" type="password" class="logpass" id="loginpasswd" name="password" placeholder="********"/>
 
                     <span id="pswdtag"></span>
 
                     <!-- <span id="forgetpass">Forgot Password?</span> -->
-
-                    <button type="button"  type="submit" class="logbtn3" onclick="loginsuccess()" >Log in</button>
+                        <div id="loginalert"></div>
+                    <button type="button" id="loginbtn" class="logbtn3" onclick="loginsuccess()" >Log in</button>
 
                     <span id="createacc">Don't have an account?</span>
                     <a href="./signup.html"><button type="button" class="Accbtn3">Sign up for free</button></a>

@@ -64,7 +64,7 @@ div.container
 
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 15px;
     line-height: 18px;
 
@@ -112,7 +112,7 @@ div.container
 
   font-family: 'Montserrat';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   line-height: 18px;
 
@@ -189,6 +189,15 @@ div.container
     font-weight: 500;
 }
 
+#loginalert
+{
+        position: absolute;
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+    top: 440px;
+    left: 170px;
+}
 #createacc
 {
     position: absolute;

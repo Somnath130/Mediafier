@@ -1,22 +1,65 @@
+function loginsuccess() {
+  if (
+    document.getElementById("logmail").value === "" ||
+    document.getElementById("loginpasswd").value === ""
+  ) {
+    document.getElementById("loginbtn").disabled = true;
+    document.getElementById("loginalert").innerText = "Fill in your details";
 
-function loginsuccess()
-{
-Swal.fire({
-  title:"<strong>Success</strong>",
-  icon: "success",
-  html: `Logged in successfull`,
-//   showCloseButton: true,
-//   showCancelButton: true,
-//   focusConfirm: false,
-//   reverseButtons: true,
-//   focusCancel: true,
-  confirmButtonText: `Go to drive`,
-}).then((result) => {
-  if (result.value) {
-    window.location.href = `home.html`;
+    setTimeout(() => {
+      const box = document.getElementById("loginalert");
+      box.style.display = "none";
+    }, 3000);
+   
+    setTimeout(() => {
+      const box = document.getElementById("loginalert");
+      box.style.display ="normal";
+    }, 1000);
+
+    setTimeout(() => {
+      loginbtn.disabled = false;
+      //   console.log("Button Activated");
+    }, 500);
+  } else {
+    document.getElementById("loginbtn").disabled = false;
+    //   location.href = "./home.html";
+
+    (function () {
+      Swal.fire({
+        title: "<strong>Success</strong>",
+        icon: "success",
+        html: `Logged in successfull`,
+        //   showCloseButton: true,
+        //   showCancelButton: true,
+        //   focusConfirm: false,
+        //   reverseButtons: true,
+        //   focusCancel: true,
+        confirmButtonText: `Go to drive`,
+      }).then((result) => {
+        if (result.value) {
+          location.href = `home.html`;
+        }
+      });
+    })();
   }
-});
-} 
+}
+
+  var emailValue = document.getElementById("emailtag").innerHTML;
+
+  var passwordValue = document.getElementById("pswdtag").innerHTML;
+
+  if (emailValue != "" && passwordValue != "") {
+    document.getElementById("loginbtn").disabled = true;
+
+    // setTimeout(() => {
+    //   loginbtn.disabled = false;
+    //   //   console.log("Button Activated");
+    // }, 5000);
+  } 
+
+window.onload = function () {
+  document.getElementById("logmail").value = "";
+};
 
 //Email address validation
 
@@ -31,8 +74,7 @@ var emailAddressValidation = function () {
   } else if (!validEmailAddress.test(emailAddressValue)) {
     emailAddressErr.innerHTML =
       "Email Address must be in valid format with @ symbol";
-  } 
-  else {
+  } else {
     emailAddressErr.innerHTML = "";
     return true;
   }
@@ -41,7 +83,6 @@ var emailAddressValidation = function () {
 logmail.oninput = function () {
   emailAddressValidation();
 };
-
 
 //password validation
 var passwordvalid = document.getElementById("loginpasswd");
@@ -69,5 +110,4 @@ var passwordValidation = function () {
 
 passwordvalid.oninput = function () {
   passwordValidation();
- //  confirmPasswordValidation();
 };
