@@ -7,34 +7,36 @@
     <title>Sign up</title>
     <link rel="icon" type="image/ico" href="./Images/cloud.png" />
     <link rel="stylesheet" href="./CSS/signup.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
     
     <div class="container">
         <div class="outerbox">
-        <div class="details">
-            <span id="welctext">Create your free account</span>
-
+            <div class="details">
+                <span id="welctext">Create your free account</span>
+                
             <form>
             <span id="nametext">Full name</span>
             <input type="email"  id="signinput" name="email" placeholder="Enter you full name" required>
 
        <span id="emailtext">Email</span>
-                    <input type="email" id="logemail" name="email" placeholder="Enter you email" required/>
+                    <input type="email" id="signemail" name="email" placeholder="Enter you email" required/>
 
             <span id="pass">Password</span>
-            <input type="password"  id="logpass" name="password" placeholder="********" required>
+            <input type="password"  id="signpass" name="password" placeholder="********" required>
 
             <span id="conpass">Confirm Password</span>
             <input type="password"  id="consignpass" name="password" placeholder="********" required>
 
 
-            <button type="button" class="logbtn3">Sign up</button>
+            <button type="button" class="signbtn3" onclick="signupsuccess()">Sign up</button>
 
             <span id="createacc">Already have an account?</span>
             <a href="./login.html"><button type="button" class="Accbtn3">Login here</button></a>
-</form>
-
+        </form>
+        
         </div>
 
         <div class="img">
@@ -42,7 +44,8 @@
             <img alt="loginboxiamge" id="veclogimg" src="./Images/Illustrations/login__.png">
         </div>
         </div>
-
+        
     </div>
 </body>
+<script src="./JS/signup.js"></script>
 </html>
