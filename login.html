@@ -19,14 +19,17 @@
 
                 <form>
                     <span id="emailtext">Email</span>
-                    <input type="email" class="logemail" placeholder="Enter your email"
-                        required />
+                    <input type="email" class="logemail" id="logmail" placeholder="Enter your email"
+                        />
+                        <span id="emailtag"></span>
                     <span id="pass">Password</span>
-                    <input type="password" class="logpass" name="password" placeholder="********"/>
+                    <input type="password" class="logpass" id="loginpasswd" name="password" placeholder="********"/>
 
-                    <span id="forgetpass">Forgot Password?</span>
+                    <span id="pswdtag"></span>
 
-                    <button type="button" class="logbtn3" onclick="loginsuccess()" >Log in</button>
+                    <!-- <span id="forgetpass">Forgot Password?</span> -->
+
+                    <button type="button"  type="submit" class="logbtn3" onclick="loginsuccess()" >Log in</button>
 
                     <span id="createacc">Don't have an account?</span>
                     <a href="./signup.html"><button type="button" class="Accbtn3">Sign up for free</button></a>

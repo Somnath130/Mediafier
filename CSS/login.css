@@ -78,7 +78,9 @@ div.container
     width: 354px;
     height: 43px;
     left: 100px;
-    top: 275px;
+    top: 270px;
+    /* font-size: 15px; */
+    font-weight: 600;
     padding: 20px;
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
@@ -91,13 +93,22 @@ div.container
     outline: transparent;
 }
 
+#emailtag
+{
+    position: absolute;
+    left: 100px;
+    top: 320px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
 #pass
 {
   position: absolute;
   width: 74px;
   height: 18px;
   left: 100px;
-  top: 340px;
+  top: 355px;
 
   font-family: 'Montserrat';
   font-style: normal;
@@ -112,12 +123,12 @@ div.container
 .logpass
 {
     box-sizing: border-box;
-
+    font-weight: 600;
     position: absolute;
     width: 354px;
     height: 43px;
     left: 100px;
-    top: 365px;
+    top: 380px;
     padding: 20px;
     background: #FFFFFF;
     border: 1px solid #C5C5C5;
@@ -128,6 +139,16 @@ div.container
     border: none;
     border: 2px solid #234B85;
     outline: transparent;
+}
+
+#pswdtag
+{
+      position: absolute;
+      left: 100px;
+      top: 425px;
+      font-size: 15px;
+      font-weight: 600;
+      width: 500px;
 }
 
 #forgetpass
@@ -153,7 +174,7 @@ div.container
     width: 354px;
     height: 43px;
     left: 100px;
-    top: 470px;
+    top: 490px;
     background-color: #234B85;
     color: #FFFFFF;
     border: none;
