@@ -11,7 +11,7 @@ function signupsuccess() {
     confirmButtonText: `Go to drive`,
   }).then((result) => {
     if (result.value) {
-      window.location.href = `home.html`;
+      window.location.href = `home2.html`;
     }
   });
 }

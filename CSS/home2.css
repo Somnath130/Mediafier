@@ -1,0 +1,450 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat',
+    sans-serif;
+}
+.uil{
+    color:white;
+}
+
+.topnav
+{
+        position: absolute;
+        width: 1920px;
+        height: 117px;
+        left: 0px;
+        top: 0px;
+
+        background: #ffffff;
+}
+
+.logo{
+position: absolute;
+width: 66px;
+height: 66px;
+left: 24px;
+top: 25px;
+}
+
+.logoname{
+position: absolute;
+width: 150px;
+height: 39px;
+left: 109px;
+top: 39px;
+
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 39px;
+}
+
+.sideitems
+{
+    position: absolute;
+    width: 345px;
+    height: 940px;
+    left: -2px;
+    top: 140px;
+    background: #234B85;
+    border-radius: 0px 100px 0px 0px;
+}
+
+.navinput
+{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    background: #ffffff;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.uil-search
+{
+    padding: 15px;
+    color: #4f4f4f;
+}
+
+.fa-regular
+{
+position: absolute;
+width: 72px;
+height: 72px;
+left: 1717px;
+top: 55px;
+}
+
+.profileicon
+{
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    left: 1802px;
+    top: 25px;
+    border-radius: 50%;
+    background-color: #234B85;
+}
+.searchbox
+{
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    position: absolute;
+    width: 785px;
+    height: 66px;
+    left: 423px;
+    top: 25px;
+    font-size: 25px;
+    font-weight: 500;
+    background: #ffffff;
+    border-radius: 29px;
+    border: 1px solid black;
+    /* outline: none; */
+}
+
+.searchicon
+{
+    border: none;
+    background-color:transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fileupload
+{
+   position: absolute;
+   width: 235px;
+   height: 63px;
+   left: 51px;
+   top: 120px;
+   
+   background: #FFFFFF;
+   border-radius: 78px;
+}
+.fileupload:hover{
+    box-shadow:5px 5px 30px rgba(0, 0, 0, 0.5);
+    transition: .2s;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited{
+text-decoration: none;
+color: inherit;
+}
+a:focus{
+    text-decoration: none;
+    color: inherit;
+}
+a:active
+{
+    text-decoration: none;
+    color: inherit;
+}
+.ellipse
+{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 10px;
+    margin-left: 10px;
+    top: 14px;
+
+    border-radius: 50%;
+    background:#234B85;
+}
+
+.uil-plus
+{
+    color: white;
+}
+
+.uploadplus
+{
+    background-color: transparent;
+    border: none;
+    padding: 5px;
+    margin-left: 3%;
+    margin-top: 3%;
+   
+    
+}
+
+.uploadtext
+{
+    margin-left: 30%;
+    font-weight: 600;
+    margin-top:8%;
+    font-size: 20px;
+
+}
+
+.myDrive{
+    position: absolute;
+    width: 100%;
+    top:25%;
+    padding: 10px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    
+}
+.myDrive:hover{
+    background-color: #4D7BBD;
+    transition: .1s;
+    
+}
+
+
+.uil-cloud
+{
+    color: #FFFFFF;
+    margin-left: 15%;
+    
+}
+
+.myDrivetext
+{
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    padding:10px;
+    top:20px;
+
+
+}
+/* Computer */
+.myPc {
+    position: absolute;
+    width: 100%;
+    top: 36%;
+    /* background-color: red; */
+    padding: 10px;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+
+}
+
+.myPc:hover {
+    background-color: #4D7BBD;
+    transition: .1s;
+}
+
+
+.uil-desktop {
+    color: #FFFFFF;
+    margin-left: 15%;
+}
+
+.myPctext {
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    top: 20px;
+    cursor: pointer;
+
+}
+
+/* Trash */
+
+.myTrash {
+    position: absolute;
+    width: 100%;
+    top: 46%;
+    padding: 10px;
+    border-radius: 0px 50px 50px 0px;
+cursor: pointer;
+}
+
+.myTrash:hover {
+    background-color: #4D7BBD;
+    transition: .1s;
+}
+
+
+.uil-trash-alt {
+    color: #FFFFFF;
+    margin-left: 15%;
+}
+
+.myTrashtext {
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    top: 20px;
+    cursor: pointer;
+
+}
+
+/* Log out */
+
+.Logout {
+    position: absolute;
+    width: 100%;
+    top: 56%;
+    padding: 10px;
+    border-radius: 0px 50px 50px 0px;
+cursor: pointer;
+}
+
+.Logout:hover {
+    background-color: #4D7BBD;
+    transition: .1s;
+}
+
+
+.uil-signout {
+    color: #FFFFFF;
+    margin-left: 15%;
+}
+
+.logouttext {
+    position: absolute;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px;
+    top: 20px;
+    cursor: pointer;
+
+}
+
+.upgradeimg
+{
+    position: absolute;
+    height: 200px;
+    top: 80%;
+}
+
+
+
+
+@media (max-width: 1000px) {
+    nav {
+        width: 73px;
+    }
+
+    nav.close {
+        width: 250px;
+    }
+
+    nav .logo_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav.close .logo_name {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav li a .link-name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav.close li a .link-name {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    nav~.dashboard {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+
+    nav.close~.dashboard {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    nav~.dashboard .top {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+
+    nav.close~.dashboard .top {
+        left: 250px;
+        width: calc(100% - 250px);
+    }
+
+    .activity .activity-data {
+        overflow-X: scroll;
+    }
+}
+
+@media (max-width: 780px) {
+    .dash-content .boxes .box {
+        width: calc(100% / 2 - 15px);
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 560px) {
+    .dash-content .boxes .box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        width: 0px;
+    }
+
+    nav.close {
+        width: 73px;
+    }
+
+    nav .logo_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav.close .logo_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav li a .link-name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav.close li a .link-name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav~.dashboard {
+        left: 0;
+        width: 100%;
+    }
+
+    nav.close~.dashboard {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+
+    nav~.dashboard .top {
+        left: 0;
+        width: 100%;
+    }
+
+    nav.close~.dashboard .top {
+        left: 0;
+        width: 100%;
+    }
+}

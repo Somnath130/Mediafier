@@ -37,7 +37,7 @@ function loginsuccess() {
         confirmButtonText: `Go to drive`,
       }).then((result) => {
         if (result.value) {
-          location.href = `home.html`;
+          location.href = `home2.html`;
         }
       });
     })();
