@@ -1,4 +1,4 @@
-/* ===== Google Font Import - Poppins ===== */
+
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -428,6 +428,34 @@ width: 80%;
 #fileupload{
     display: none;
 }
+
+.foldercontainer
+{
+    /* position: absolute; */
+    background-color: red;
+    color: #000000;
+    float: right;
+   height: 46rem;
+   width: 82%;
+   display: inline-flex;
+   justify-content: space-evenly;
+    /* left: 70%;
+    top: 200px; */
+}
+
+.card1
+{
+    height: 300px;
+    width: 400px;
+    background-color: green;
+}
+
+.card2 {
+    height: 300px;
+    width: 400px;
+    background-color: yellow;
+}
+
 @media (max-width: 1000px) {
     nav {
         width: 73px;
