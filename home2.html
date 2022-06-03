@@ -53,7 +53,7 @@
       <div class="uploadtext">Upload</div>
       </div>
       <div class="dropdown-menu" aria-labelledby="exampleModalLabel">
-        <a class="dropdown-item" href="#">Create a folder</a>
+        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#createModal">Create a folder</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalbox"> Upload a file </a>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#foldermodalbox">Upload a folder</a>
@@ -155,6 +155,29 @@
         </div>
       </div>
     </div>
+
+
+    <!-- Create a folder -->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create folder</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <img src="./Images/Illustrations/add-folder.png" class="add_folder" alt="add folder image">
+       <input type="text" class="form-control" id="FormControlInput1" placeholder="Folder name">
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-success">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
