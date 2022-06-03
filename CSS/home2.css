@@ -398,6 +398,12 @@ color: #ffffff;
     
 }
 
+.fileimage
+{
+    height: 100px;
+    width: 100px;
+    margin-left: 43%;
+}
 
 @media (max-width: 1000px) {
     nav {
