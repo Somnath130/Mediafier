@@ -1,4 +1,9 @@
-function viewModalbox() {
-  document.getElementById("fileUpload").click();
+function viewfileModalbox() {
+  document.getElementById("fileupload").click();
+}
+
+
+function viewfolderModalbox() {
+  document.getElementById("folderupload").click();
 }
 
