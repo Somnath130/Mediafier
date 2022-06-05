@@ -9,10 +9,15 @@ function viewfolderModalbox() {
 
 function addCard()
 {
-  var getContainer = document.getElementsByClassName(".foldercontainer");
-  var getCard =document.createElement("div");
+  var x = document.createElement("div");
+  var img = document.createElement("img");
+  var divBox = document.getElementById("folderContent");
+  x.setAttribute("id", "box");
 
+  x.innerText = "Photos";
 
-  document.body.appendChild("getCard");
+  x.innerHTML = `<div style="height: 100%;width: 100%;display: flex; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/folderadd.png'></div>`;
+  //    img.setAttribute("id", "imgbox");
+  divBox.append(x);
 
 }
