@@ -83,8 +83,7 @@ div.container {
 }
 
 
-#fullnametag
-{
+#fullnametag {
     position: absolute;
     left: 100px;
     top: 245px;
@@ -130,8 +129,7 @@ div.container {
     outline: transparent;
 }
 
-#signmailtag
-{
+#signmailtag {
     position: absolute;
     left: 100px;
     top: 335px;
@@ -159,7 +157,7 @@ div.container {
 
 #signpass {
     box-sizing: border-box;
-font-size: 10px;
+    font-size: 10px;
     position: absolute;
     width: 354px;
     height: 43px;
@@ -177,8 +175,7 @@ font-size: 10px;
     outline: transparent;
 }
 
-#passwdtag
-{
+#passwdtag {
     position: absolute;
     left: 100px;
     top: 425px;
@@ -235,7 +232,7 @@ font-size: 10px;
     font-weight: 600;
 }
 
- .signbtn3 {
+.logbtn3 {
     position: absolute;
     width: 354px;
     height: 43px;
@@ -247,13 +244,13 @@ font-size: 10px;
     cursor: pointer;
 }
 
-.signbtn3:hover {
+.logbtn3:hover {
     color: #234B85;
     background-color: white;
     border: solid 1px #234B85;
     transition: .4s;
     font-weight: 500;
-} 
+}
 
 #createacc {
     position: absolute;
@@ -272,13 +269,12 @@ font-size: 10px;
 }
 
 
-#loginlink:link
-{
-    color:green;  
+#loginlink:link {
+    color: green;
 }
-#loginlink:visited
-{
-    color:red;  
+
+#loginlink:visited {
+    color: red;
 }
 
 #loginlink:hover {
@@ -289,5 +285,3 @@ font-size: 10px;
 #loginlink:active {
     color: red;
 }
-
-

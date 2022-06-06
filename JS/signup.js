@@ -1,21 +1,48 @@
-function signupsuccess() {
+var username = document.getElementById("signinput");
+var email = document.getElementById("signmail");
+var password = document.getElementById("signpass");
+var su = document.getElementById("signbtn");
+var abc = new Date();
+
+// su.addEventListener("click",
+
+var linkFetch = function myFunction() {
+  console.log("inside link fetch function");
+
+  fetch("http://localhost:56072/Signup", {
+    method: "POST",
+
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      usersUsername: username.value,
+      usersPassword: CryptoJS.MD5(password.value).toString(),
+      usersCreatedAt: abc.toDateString(),
+    }),
+  })
+    .then((res) => {
+      return res.text();
+    })
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+};
+
+function signUpSuccess() {
   Swal.fire({
     title: "<strong>Success</strong>",
     icon: "success",
     html: `Account created successfully`,
-    //   showCloseButton: true,
-    //   showCancelButton: true,
-    //   focusConfirm: false,
-    //   reverseButtons: true,
-    //   focusCancel: true,
-    confirmButtonText: `Go to drive`,
+    confirmButtonText: `Login Here`,
   }).then((result) => {
     if (result.value) {
-      window.location.href = `home2.html`;
+      // console.log("aaaaa=>", result.value);
+
+      linkFetch();
+      window.location.href = `login.html`;
     }
   });
 }
-
 
 //Full name validation
 var fValid = document.getElementById("signinput");
@@ -29,8 +56,7 @@ var firstNameValidation = function () {
   if (firstNameValue == "") {
     firstNameErr.innerHTML = "Name is required";
   } else if (!validFirstName.test(firstNameValue)) {
-    firstNameErr.innerHTML =
-      "Name must be only string without white spaces";
+    firstNameErr.innerHTML = "Name must be only string without white spaces";
   } else {
     firstNameErr.innerHTML = "";
     return true;
@@ -40,8 +66,6 @@ var firstNameValidation = function () {
 fValid.oninput = function () {
   firstNameValidation();
 };
-
-
 
 //email validation
 var emailAddress = document.getElementById("signemail");
@@ -64,7 +88,6 @@ var emailAddressValidation = function () {
 signemail.oninput = function () {
   emailAddressValidation();
 };
-
 
 //password validation
 var passwordvalid = document.getElementById("signpass");
@@ -94,7 +117,6 @@ passwordvalid.oninput = function () {
   passwordValidation();
   //  confirmPasswordValidation();
 };
-
 
 var confirmPassword = document.getElementById("consignpass");
 

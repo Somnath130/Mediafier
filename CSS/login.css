@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
-*
-{
+
+* {
     font-family: 'Montserrat',
-    sans-serif;  
+        sans-serif;
 }
 
-body{
-      background-image: linear-gradient(45deg, #234B85, rgb(107, 186, 240));
+body {
+    background-image: linear-gradient(45deg, #234B85, rgb(107, 186, 240));
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     width: 100%;
 }
-div.container
-{
+
+div.container {
     box-sizing: border-box;
 
     position: absolute;
@@ -21,15 +21,14 @@ div.container
     height: 725px;
     left: 311px;
     top: 108px;
-    
+
     background: #FFFDFD;
     border: none;
     box-shadow: 0px 31px 37px 19px rgba(0, 0, 0, 0.25);
 }
 
 
-#veclogimg
-{
+#veclogimg {
     position: absolute;
     width: 750px;
     height: 700px;
@@ -37,25 +36,23 @@ div.container
     top: 10px;
 }
 
-#welctext
-{
-   position: absolute;
-   width: 199px;
-   height: 98px;
-   left: 100px;
-   top: 120px;
+#welctext {
+    position: absolute;
+    width: 199px;
+    height: 98px;
+    left: 100px;
+    top: 120px;
     font-family: 'Montserrat',
-    sans-serif;
-   font-style: normal;
-   font-weight: 800;
-   font-size: 40px;
-   line-height: 49px;
+        sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 49px;
 
-   color: #000000;
+    color: #000000;
 }
 
-#emailtext
-{
+#emailtext {
     position: absolute;
     width: 44px;
     height: 18px;
@@ -71,8 +68,7 @@ div.container
     color: #000000;
 }
 
-.logemail
-{
+.logemail {
     box-sizing: border-box;
     position: absolute;
     width: 354px;
@@ -87,14 +83,13 @@ div.container
     border-radius: 5px;
 }
 
-.logemail:focus{
+.logemail:focus {
     border: none;
-    border:2px solid #234B85;
+    border: 2px solid #234B85;
     outline: transparent;
 }
 
-#emailtag
-{
+#emailtag {
     position: absolute;
     left: 100px;
     top: 320px;
@@ -102,26 +97,24 @@ div.container
     font-weight: 600;
 }
 
-#pass
-{
-  position: absolute;
-  width: 74px;
-  height: 18px;
-  left: 100px;
-  top: 355px;
+#pass {
+    position: absolute;
+    width: 74px;
+    height: 18px;
+    left: 100px;
+    top: 355px;
 
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
 
-  color: #000000;
-  
+    color: #000000;
+
 }
 
-.logpass
-{
+.logpass {
     box-sizing: border-box;
     font-weight: 600;
     position: absolute;
@@ -141,35 +134,32 @@ div.container
     outline: transparent;
 }
 
-#pswdtag
-{
-      position: absolute;
-      left: 100px;
-      top: 425px;
-      font-size: 15px;
-      font-weight: 600;
-      width: 500px;
+#pswdtag {
+    position: absolute;
+    left: 100px;
+    top: 425px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 500px;
 }
 
-#forgetpass
-{
-   position: absolute;
-   width: 117px;
-   height: 12px;
-   left: 360px;
-   top: 420px;
+#forgetpass {
+    position: absolute;
+    width: 117px;
+    height: 12px;
+    left: 360px;
+    top: 420px;
 
-   font-family: 'Montserrat';
-   font-style: normal;
-   font-weight: 500;
-   font-size: 10px;
-   line-height: 12px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
 
-   color: #000000;
+    color: #000000;
 }
 
-.logbtn3
-{
+.logbtn3 {
     position: absolute;
     width: 354px;
     height: 43px;
@@ -181,25 +171,24 @@ div.container
     cursor: pointer;
 }
 
-.logbtn3:hover{
-    color:#234B85;
+.logbtn3:hover {
+    color: #234B85;
     background-color: white;
     border: solid 1px #234B85;
     transition: .4s;
     font-weight: 500;
 }
 
-#loginalert
-{
-        position: absolute;
+#loginalert {
+    position: absolute;
     font-size: 25px;
     font-weight: 600;
     color: red;
     top: 440px;
     left: 170px;
 }
-#createacc
-{
+
+#createacc {
     position: absolute;
     width: 180px;
     height: 18px;
@@ -215,16 +204,13 @@ div.container
     color: #000000;
 }
 
-.Accbtn3
-{
+.Accbtn3 {
     position: absolute;
     width: 354px;
     height: 43px;
     left: 100px;
     top: 610px;
     font-weight: 700;
-    border:none;
+    border: none;
     cursor: pointer;
 }
-
-

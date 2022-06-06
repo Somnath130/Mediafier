@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
 
 <head>
@@ -23,7 +22,7 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 
-<body>
+<body >
   <div class="topnav">
     <nav>
       <img class="logo" src="./Images/cloud.png" alt="logo" />
@@ -33,7 +32,7 @@
         <button title="search" class="searchicon">
           <i class="uil uil-search fa-lg"></i>
         </button>
-        <input type="text" placeholder="Search in drive" class="navinput" />
+        <input type="text" placeholder="Search in drive" class="navinput" id="inp" oninput="search()"/>
       </div>
 
       <i class="fa-regular fa-bell fa-2xl"></i>
@@ -73,7 +72,7 @@
   </div>
   <a href="./login.html">
     <div class="Logout">
-      <i class="uil uil-signout fa-2x"></i><span class="logouttext">Logout</span>
+      <i class="uil uil-signout fa-2x"></i><span class="logouttext" id="log" onclick="logout()">Logout</span>
     </div>
   </a>
 
@@ -82,7 +81,7 @@
   <span id="upgradehead">Unlock your plan</span>
   <span id="upgradetext">Expanded storage, access to more features on Medifier</span>
 
-  <a href="./home.html">
+  <a href="#">
     <div class="upgradebtn"><span id="btnup">Upgrade</span></div>
   </a>
   </div>
@@ -173,7 +172,7 @@
       </div>
       <div class="modal-footer">
         
-        <button type="button" onclick="addCard()" class="btn btn-success">Create</button>
+        <button type="button" onclick="addCard1()" class="btn btn-success">Create</button>
       </div>
     </div>
   </div>
@@ -185,12 +184,11 @@
   <div class="folderText">My Drive</div>
 
 <div id="folderContent">
-
 </div>
 
 </div>
 
-  <script async src="./JS/home2.js"></script>
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
@@ -204,3 +202,4 @@
 </body>
 
 </html>
+  <script defer src="./JS/home2.js"></script>
