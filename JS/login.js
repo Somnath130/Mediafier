@@ -112,10 +112,10 @@ var emailAddressValidation = function () {
   emailAddressErr = document.getElementById("emailtag");
   emailAddressErr.style.color = "red";
   if (emailAddressValue == "") {
-    emailAddressErr.innerHTML = "Email Address is required";
+    emailAddressErr.innerHTML = "Username is required";
   } else if (!validEmailAddress.test(emailAddressValue)) {
     emailAddressErr.innerHTML =
-      "Email Address must be in valid format with @ symbol";
+      "";
   } else {
     emailAddressErr.innerHTML = "";
     return true;
