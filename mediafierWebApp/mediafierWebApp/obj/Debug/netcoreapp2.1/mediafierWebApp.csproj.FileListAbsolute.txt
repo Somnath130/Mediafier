@@ -26,3 +26,17 @@ D:\Mediafier_backend\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\med
 D:\Mediafier_backend\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.RazorTargetAssemblyInfo.cache
 D:\Mediafier_backend\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.dll
 D:\Mediafier_backend\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.pdb
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\bin\Debug\netcoreapp2.1\mediafierWebApp.deps.json
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\bin\Debug\netcoreapp2.1\mediafierWebApp.runtimeconfig.json
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\bin\Debug\netcoreapp2.1\mediafierWebApp.runtimeconfig.dev.json
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\bin\Debug\netcoreapp2.1\mediafierWebApp.dll
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\bin\Debug\netcoreapp2.1\mediafierWebApp.pdb
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.csprojAssemblyReference.cache
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.csproj.CoreCompileInputs.cache
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.RazorAssemblyInfo.cache
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.RazorAssemblyInfo.cs
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.AssemblyInfoInputs.cache
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.AssemblyInfo.cs
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.RazorTargetAssemblyInfo.cache
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.dll
+D:\Projects\CG_Docs_Project\Mediafer\mediafierWebApp\mediafierWebApp\obj\Debug\netcoreapp2.1\mediafierWebApp.pdb

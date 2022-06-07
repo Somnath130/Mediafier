@@ -414,6 +414,11 @@ a:active {
     display: none;
 }
 
+#folderupload
+{
+    display: none;
+}
+
 #box {
 
     width: 15rem;
@@ -424,7 +429,7 @@ a:active {
     border-radius: 15px;
     background: white;
     position: relative;
-    border: .5px solid rgb(198, 198, 198);
+    /* border: .5px solid rgb(198, 198, 198); */
 }
 
 #imgbox {

@@ -54,19 +54,21 @@
       <div class="dropdown-menu" aria-labelledby="exampleModalLabel">
         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#createModal">Create a folder</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalbox"> Upload a file </a>
+            <a class="dropdown-item" href="./filewebpage.html" > Upload a file </a><!--data-toggle="modal" data-target="#modalbox"-->
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#foldermodalbox">Upload a folder</a>
 
 
       </div>  
   </div>
-
+<a href="./home2.html">
   <div class="myDrive">
     <i class="uil uil-cloud fa-2x"></i><span class="myDrivetext">My drive</span>
-  </div>
+  </div></a>
+  <a href="./filewebpage.html">
   <div class="myPc">
     <i class="uil uil-desktop fa-2x"></i><span class="myPctext">Computer</span>
   </div>
+  </a>
   <div class="myTrash">
     <i class="uil uil-trash-alt fa-2x"></i><span class="myTrashtext">Trash</span>
   </div>
@@ -148,7 +150,7 @@
             <img src="./Images/Illustrations/folder.png" alt="file image" class="fileimage">
           </div>
           <div class="modal-footer">
-            <input type="file" id="folderupload" style="display:none;" name="file" webkitdirectory mozdirectory>
+            <input type="file" id="folderupload"  name="file" webkitdirectory mozdirectory>
             <button onclick="viewfolderModalbox()" value="upload" type="button" class="btn btn-primary">Choose folder</button>
           </div>
         </div>
@@ -172,7 +174,7 @@
       </div>
       <div class="modal-footer">
         
-        <button type="button" onclick="addCard1()" class="btn btn-success">Create</button>
+        <button type="button" onclick="addCard()" class="btn btn-success">Create</button>
       </div>
     </div>
   </div>

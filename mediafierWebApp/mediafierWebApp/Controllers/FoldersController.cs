@@ -60,6 +60,14 @@ namespace mediafierWebApp.Controllers
             var result = _mediafiercontext.Folders.Where(obj => obj.FoldersName.Contains(value));
             return Ok(result);
         }
+
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+            var folds = _mediafiercontext.Folders.Where(res => res.FoldersId == id).ToList();
+            folds.ForEach(res => _mediafiercontext.Folders.Remove(res));
+            _mediafiercontext.SaveChanges();
+        }
     }
 
     }

@@ -6,25 +6,7 @@ function viewfolderModalbox() {
   document.getElementById("folderupload").click();
 }
 
-// function addCard() {
-//   var x = document.createElement("div");
-//   var img = document.createElement("img");
-//   var divBox = document.getElementById("folderContent");
-//   x.setAttribute("id", "box");
-
-//   x.innerText = "Photos";
-
-//   x.innerHTML = `<div style="height: 100%;width: 100%;display: flex; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/folderadd.png'></div>`;
-//   //    img.setAttribute("id", "imgbox");
-//   divBox.append(x);
-// }
-
-// const constants = {};
-
-//   const form = document.getElementById("fo");
-//   console.log(form);
-
-function addCard1() {
+function addCard() {
   try {
     debugger;
     var form = document.getElementById("FormControlInput1");
@@ -62,22 +44,23 @@ function listFolders() {
       .then((response) => response.json())
       .then((folders) => {
         folders.forEach((folder) => {
-          var create = document.getElementById("folderContent");
-          var art = document.createElement("article");
+          // var create = document.getElementById("folderContent");
+          // var art = document.createElement("article");
 
           var folderBox = document.createElement("div");
-          // var img = document.createElement("img");
           var divBox = document.getElementById("folderContent");
           folderBox.setAttribute("id", "box");
           const fold = folder.foldersName;
+          const fid= folder.foldersId;
           console.log(fold);
           var icondiv = document.createElement("div");
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img style="height: 1.3rem;width: 1.3rem;float:right;" src="Images/Illustrations/info.png"><img style="height: 1.5rem;width: 1.3rem;float:right;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="del(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
-          folderBox.innerHTML = `<div style="height: 88%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='Images/Illustrations/folderadd.png'>${fold}</div>`;
+          folderBox.innerHTML = `<div style="height: 88%;width: 100%;display: inline-grid; justify-content: center">
+          <img onclick="openFiles()" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'>${fold}</div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);
@@ -86,6 +69,11 @@ function listFolders() {
   } catch (err) {
     console.log(err);
   }
+}
+
+function openFiles()
+{
+  window.location.href = "./filewebpage.html";
 }
 
 function search() {
@@ -106,7 +94,6 @@ function search() {
       .then((folders) => {
         folders.forEach((folder) => {
           var folderBox = document.createElement("div");
-          // var img = document.createElement("img");
           var divBox = document.getElementById("folderContent");
           folderBox.setAttribute("id", "box");
           const fold = folder.foldersName;
@@ -123,6 +110,47 @@ function search() {
     console.log(err);
   }
 }
+
+function del(folderid) {
+  var d = "";
+
+  var requestOptions = {
+    method: "DELETE",
+
+    body: d,
+
+    redirect: "follow",
+  };
+
+  let deleteurl = "http://localhost:56072/api/Folders/" + folderid;
+
+  fetch(deleteurl, requestOptions)
+    .then((response) => response.text())
+
+    .then((result) => console.log(result))
+
+    .catch((error) => console.log("error", error));
+
+  location.reload();
+}
+
+function view(folderid, foldername, foldercreatedby, foldercreatedat) {
+  alert(
+    "folderid:" +
+      folderid +
+      "\n" +
+      "foldername:" +
+      foldername +
+      "\n" +
+      "foldercreatedby:" +
+      foldercreatedby +
+      "\n" +
+      "foldercreatedat:" +
+      foldercreatedat +
+      "\n"
+  );
+}
+
 function logout() {
   var logoutbtn = document.getElementById("log");
   window.location.href = "/home2.html";
