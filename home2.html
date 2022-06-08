@@ -40,10 +40,6 @@
         </button>
         <input type="text" placeholder="Search in drive" class="navinput" id="inp" oninput="search()"/>
       </div>
-
-      <i class="fa-regular fa-bell fa-2xl"></i>
-
-      <div class="profileicon"></div>
     </nav>
   </div>
 
@@ -59,7 +55,6 @@
         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#createModal">Create a folder</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="./filewebpage.html" > Upload a file </a>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#foldermodalbox">Upload a folder</a>
 
 
       </div>  
@@ -121,41 +116,6 @@
           <div class="modal-footer">
             <input type="file" id="fileupload" multiple/>
             <button onclick="viewfileModalbox()" value="upload" type="button" class="btn btn-primary">Choose File</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- folder upload modal -->
-  <div
-      class="modal fade"
-      id="foldermodalbox"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenter"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Upload folder</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-
-            <img src="./Images/Illustrations/folder.png" alt="file image" class="fileimage">
-          </div>
-          <div class="modal-footer">
-            <input type="file" id="folderupload"  name="file" webkitdirectory mozdirectory>
-            <button onclick="viewfolderModalbox()" value="upload" type="button" class="btn btn-primary">Choose folder</button>
           </div>
         </div>
       </div>

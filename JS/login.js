@@ -1,3 +1,103 @@
+// var username2 = document.getElementById("logmail");
+// var password2 = document.getElementById("loginpasswd");
+
+
+// //Data authentication function
+
+// var loginData = function myFunction() {
+//   console.log("Inside the login Data");
+//   fetch("http://localhost:56072/api/Login", {
+//     method: "POST",
+//     mode: "cors",
+//     headers: {
+//       "content-type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       Username: username2.value,
+//       Password: CryptoJS.MD5(password2.value).toString(),
+//     }),
+//   })
+//     .then((res) => {
+//       console.log(res);
+//       return res.json();
+//     })
+//     .then((data) => showstorage(data))
+//     .catch((error) => console.log(error));
+// };
+
+// function showstorage(data) {
+//   if (data != null && data != undefined && data != "") {
+//     sessionStorage.setItem("token", data.token);
+//     sessionStorage.setItem("uid", data.id);
+//   }
+//   loc();
+// }
+
+// function loc() {
+//   if (sessionStorage.getItem("token") != null) {
+//     window.location.href = "/home2.html";
+//   } else {
+//     alert("Login Credentials are wrong");
+//   }
+// }
+
+// window.onload = function () {
+//   document.getElementById("logmail").value = "";
+// };
+
+// //Email address validation
+
+// var userName = document.getElementById("logmail");
+// var emailAddressValidation = function () {
+//   emailAddressValue = userName.value.trim();
+//   validEmailAddress = /^.{4,}$/;
+//   emailAddressErr = document.getElementById("emailtag");
+//   emailAddressErr.style.color = "red";
+//   if (emailAddressValue === "") {
+//     emailAddressErr.innerHTML = "Username is required";
+//   } else if (!validEmailAddress.test(emailAddressValue)) {
+//     document.getElementById("loginbtn").disabled = true;
+//     emailAddressErr.innerHTML =
+//       "Username must be atleast 4 characters long";
+//   } else {
+//     emailAddressErr.innerHTML = "";
+//     return true;
+//   }
+// };
+
+// userName.oninput = function () {
+//   emailAddressValidation();
+// };
+
+// //password validation
+// var passwordvalid = document.getElementById("loginpasswd");
+// passwordvalid.setAttribute("type", "password");
+
+// var passwordValidation = function () {
+//   passwordValue = passwordvalid.value.trim();
+//   validPassword =
+//     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+//   passwordErr = document.getElementById("pswdtag");
+
+//   passwordErr.style.color = "red";
+
+//   if (passwordValue == "") {
+//     passwordErr.innerHTML = "Password is required";
+//   } else if (!validPassword.test(passwordValue)) {
+//     passwordErr.innerHTML =
+//       "Password must have at least one Uppercase, lowercase, digit, special characters & 8 characters";
+//   } else {
+//     passwordErr.innerHTML = "";
+//     return true;
+//   }
+// };
+
+// passwordvalid.oninput = function () {
+//   passwordValidation();
+// };
+
+
 var username2 = document.getElementById("logmail");
 var password2 = document.getElementById("loginpasswd");
 // var lg = document.getElementById("logbtn");
@@ -72,6 +172,7 @@ var loginData = function myFunction() {
 
 function showstorage(data) {
   if (data != null && data != undefined && data != "") {
+    sessionStorage.setItem("Name", username2.value);
     sessionStorage.setItem("token", data.token);
     sessionStorage.setItem("uid", data.id);
   }
@@ -86,45 +187,30 @@ function loc() {
   }
 }
 
-// var emailValue = document.getElementById("emailtag").innerHTML;
-
-// var passwordValue = document.getElementById("pswdtag").innerHTML;
-
-// if (emailValue != "" && passwordValue != "") {
-//   document.getElementById("loginbtn").disabled = true;
-
-//   // setTimeout(() => {
-//   //   loginbtn.disabled = false;
-//   //   //   console.log("Button Activated");
-//   // }, 5000);
-// }
-
 window.onload = function () {
   document.getElementById("logmail").value = "";
 };
 
-//Email address validation
+//Username validation
 
-var userName = document.getElementById("logmail");
+var emailAddress = document.getElementById("logmail");
 var emailAddressValidation = function () {
-  emailAddressValue = userName.value.trim();
-  validEmailAddress = /^.{4,}$/;
-  emailAddressErr = document.getElementById("emailtag");
+  let emailAddressValue = emailAddress.value.trim();
+  let validEmailAddress = /^.{6,}$/;
+  let emailAddressErr = document.getElementById("emailtag");
   emailAddressErr.style.color = "red";
-  if (emailAddressValue === "") {
-    document.getElementById("loginbtn").disabled = true;
+  if (emailAddressValue == "") {
     emailAddressErr.innerHTML = "Username is required";
   } else if (!validEmailAddress.test(emailAddressValue)) {
-    document.getElementById("loginbtn").disabled = true;
     emailAddressErr.innerHTML =
-      "Username must be atleast 4 characters long";
+      "Username must be 4 characters long";
   } else {
     emailAddressErr.innerHTML = "";
     return true;
   }
 };
 
-userName.oninput = function () {
+logmail.oninput = function () {
   emailAddressValidation();
 };
 
@@ -133,7 +219,7 @@ var passwordvalid = document.getElementById("loginpasswd");
 passwordvalid.setAttribute("type", "password");
 
 var passwordValidation = function () {
-  passwordValue = passwordvalid.value.trim();
+  let passwordValue = passwordvalid.value.trim();
   validPassword =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
@@ -155,3 +241,4 @@ var passwordValidation = function () {
 passwordvalid.oninput = function () {
   passwordValidation();
 };
+

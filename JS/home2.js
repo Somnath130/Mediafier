@@ -54,7 +54,7 @@ function listFolders() {
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick='del(${fid})' style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick='deleteFileFunc(${fid})' style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div id="imagefolderBox"><div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
           <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'></div><div id="folderImageText">${fold}</div> </div>`;
@@ -95,7 +95,7 @@ function search() {
           var folderBox = document.createElement("div");
           folderBox.setAttribute("id", "box");
           const fold = folder.foldersName;
-          // console.log(fold);
+        
 
           folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/folderadd.png'>${fold}</div>`;
           divBox.append(folderBox);
@@ -106,52 +106,48 @@ function search() {
   }
 }
 
-// function deleteFileFunc(fid) 
+function deleteFileFunc(fid) 
 
-// {
-// const swalWithBootstrapButtons = Swal.mixin({
-//   customClass: {
-//     confirmButton: "btn btn-success",
-//     cancelButton: "btn btn-danger",
-//   },
-//   buttonsStyling: false,
-// });
+{
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger",
+  },
+  buttonsStyling: false,
+});
 
-// swalWithBootstrapButtons
-//   .fire({
-//     title: "Are you sure?",
-//     text: "You won't be able to revert this!",
-//     icon: "warning",
-//     showCancelButton: true,
-//     confirmButtonText: "Yes, delete it!",
-//     cancelButtonText: "No, cancel!",
-//     reverseButtons: true,
-//   })
-//   .then((result) => {
-//     if (result.isConfirmed) {
-//       swalWithBootstrapButtons.fire(
+swalWithBootstrapButtons
+  .fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Yes, delete it!",
+    cancelButtonText: "No, cancel!",
+    reverseButtons: true,
+  })
+  .then((result) => {
+    if (result.isConfirmed) {
+      swalWithBootstrapButtons.fire(
+        "Deleted!",
+        "Your file has been deleted.",
+        "success",
+        del(fid)
+      );
+    } else if (
+  
+      result.dismiss === Swal.DismissReason.cancel
+    ) {
+      swalWithBootstrapButtons.fire(
+        "Cancelled",
+        "Your file is safe",
+        "error"
+      );
+    }
+  });
 
-//         // console.log("I am above del"),
-        
-//         del(fid),
-//         // console.log("I am here"),
-//         "Deleted!",
-//         "Your file has been deleted.",
-//         "success"
-//       );
-//     } else if (
-//       /* Read more about handling dismissals below */
-//       result.dismiss === Swal.DismissReason.cancel
-//     ) {
-//       swalWithBootstrapButtons.fire(
-//         "Cancelled",
-//         "Your file is safe",
-//         "error"
-//       );
-//     }
-//   });
-
-// }
+}
 
 function del(folderid) {
   var d = "";
@@ -172,7 +168,7 @@ function del(folderid) {
 
     .catch((error) => console.log("error", error));
 
-  location.reload();
+  // location.reload();
 }
 
 function view(folderid, foldername, foldercreatedby, foldercreatedat) {

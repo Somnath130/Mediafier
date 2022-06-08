@@ -34,10 +34,6 @@
         </button>
         <input type="text" placeholder="Search for files" class="navinput" id="inp" oninput="search()"/>
       </div>
-
-      <i class="fa-regular fa-bell fa-2xl"></i>
-
-      <div class="profileicon"></div>
     </nav>
   </div>
 
@@ -50,7 +46,7 @@
       <div class="uploadtext">Upload</div>
       </div>
       <div class="dropdown-menu" aria-labelledby="exampleModalLabel">
-        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#createModal">Create a file</a>
+        <!-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#createModal">Create a file</a> -->
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalbox"> Upload a file </a>
 
       </div>  
@@ -110,33 +106,11 @@
           </div>
           <div class="modal-footer">
             <input type="file" id="fileupload" multiple/>
-            <button onclick="addfile()" value="upload" type="button" class="btn btn-primary">Choose File</button>
+            <button onclick="addfile()" value="upload" type="button" class="btn btn-primary" data-dismiss="modal">Upload</button>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Create a file -->
-    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create file</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <img src="./Images/Illustrations/file_add.png" class="add_folder" alt="add folder image">
-       <input type="text" class="form-control" id="Fileinput" placeholder="File name">
-      </div>
-      <div class="modal-footer">
-       
-        <button type="button" onclick="addfile()" class="btn btn-success">Create</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div id="foldercontainer">
 

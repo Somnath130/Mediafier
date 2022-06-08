@@ -40,31 +40,6 @@ async function addfile() {
   }
 }
 
-// try {
-//   var form = document.getElementById("Fileinput");
-//   var data = new Date();
-//   fetch("http://localhost:56072/api/Documents", {
-//     body: JSON.stringify({
-//       docName: form.value,
-//       docContentType: "document",
-//       docSize: 0,
-//       docCreatedBy: sessionStorage.getItem("uid"),
-//       docCreatedAt: data.toISOString(),
-//       docFolderId: sessionStorage.getItem("fid"),
-//       docIsDeleted: false,
-//     }),
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   }).then((folderCreateResponse) => {
-//     console.log(folderCreateResponse);
-//     listFiles();
-//   });
-// } catch (err) {
-//   console.log(err);
-// }
-//   }
 
 function listFiles() {
   try {
@@ -91,8 +66,8 @@ function listFiles() {
 
           icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="del(${Documents.docId})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
-          folderBox.innerHTML = `<div style="height: 88%;width: 100%;display: inline-grid; justify-content: center">
-              <img onclick="openFiles()" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'>${fold}</div>`;
+          folderBox.innerHTML = `<div style="height: 70%;width: 100%;display: inline-grid; justify-content: center">
+              <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/google-docs.png'></div><div id="fileImageText">${fold}</div></div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);
@@ -132,7 +107,7 @@ function search() {
           folderBox.setAttribute("id", "box");
 
           const fold = folder.foldersName;
-          folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/folderadd.png'>${fold}</div>`;
+          folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/google-docs.png'>${fold}</div>`;
 
           divBox.append(folderBox);
         });

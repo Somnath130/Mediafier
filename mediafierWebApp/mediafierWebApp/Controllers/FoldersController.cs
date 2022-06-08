@@ -64,8 +64,15 @@ namespace mediafierWebApp.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            var folds = _mediafiercontext.Folders.Where(res => res.FoldersId == id).ToList();
-            folds.ForEach(res => _mediafiercontext.Folders.Remove(res));
+            //var folds = _mediafiercontext.Folders.Where(res => res.FoldersId == id).ToList();
+            //folds.ForEach(res => _mediafiercontext.Folders.Remove(res));
+           // _mediafiercontext.SaveChanges();
+
+           var folds = _mediafiercontext.Document.Where(result => result.DocFolderId == id).ToList();
+            folds.ForEach(result => _mediafiercontext.Document.Remove(result));
+            _mediafiercontext.SaveChanges();
+            var res = _mediafiercontext.Folders.Where(result => result.FoldersId == id).ToList();
+            res.ForEach(result => _mediafiercontext.Folders.Remove(result));
             _mediafiercontext.SaveChanges();
         }
     }
