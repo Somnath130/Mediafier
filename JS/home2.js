@@ -57,7 +57,7 @@ function listFolders() {
           icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="del(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div id="imagefolderBox"><div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
-          <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'></div><div id="folderImageText">${fold}</div> </div>`;
+          <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'></div><div id="folderImageText">${fold}</div> </div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);
@@ -68,8 +68,9 @@ function listFolders() {
   }
 }
 
-function openFiles()
+function openFiles(fid)
 {
+  sessionStorage.setItem("fid",fid)
   window.location.href = "./filewebpage.html";
 }
 
@@ -129,20 +130,29 @@ function del(folderid) {
 }
 
 function view(folderid, foldername, foldercreatedby, foldercreatedat) {
-  alert(
-    "folderid:" +
+
+
+
+  Swal.fire({
+    title: "Folder id: " +
       folderid +
       "\n" +
-      "foldername:" +
+      "Folder name: " +
       foldername +
       "\n" +
-      "foldercreatedby:" +
+      "Folder created by: " +
       foldercreatedby +
       "\n" +
-      "foldercreatedat:" +
+      "Folder created at: " +
       foldercreatedat +
-      "\n"
-  );
+      "\n",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
 }
 
 function logout() {

@@ -23,9 +23,10 @@ namespace mediafierWebApp.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var res = _mediafiercontext.Folders.ToList();
+            var res = _mediafiercontext.Document.ToList();
             return Ok(res);
         }
+
 
 
         // POST: api/Documents
@@ -43,7 +44,21 @@ namespace mediafierWebApp.Controllers
             _mediafiercontext.Document.Add(obj);
             _mediafiercontext.SaveChanges();
         }
-     
+        [HttpGet("{id:int}")]
+        public IActionResult Get(int id)
+        {
+            try
+            {
+                var result = _mediafiercontext.Document.Where(o => o.DocFolderId == id);
+                if (result == null) return NotFound();
+                return Ok(result);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error retrieving data from the database");
+            }
+        }
 
         // PUT: api/Documents/5
         [HttpPut("{id}")]
@@ -55,6 +70,10 @@ namespace mediafierWebApp.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var del = _mediafiercontext.Document.Where(r => r.DocId == id).ToList();
+            del.ForEach(r => _mediafiercontext.Document.Remove(r));
+            _mediafiercontext.SaveChanges();
         }
     }
 }
+

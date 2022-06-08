@@ -105,24 +105,26 @@ window.onload = function () {
 
 //Email address validation
 
-var emailAddress = document.getElementById("logmail");
+var userName = document.getElementById("logmail");
 var emailAddressValidation = function () {
-  emailAddressValue = emailAddress.value.trim();
-  validEmailAddress = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  emailAddressValue = userName.value.trim();
+  validEmailAddress = /^.{4,}$/;
   emailAddressErr = document.getElementById("emailtag");
   emailAddressErr.style.color = "red";
-  if (emailAddressValue == "") {
+  if (emailAddressValue === "") {
+    document.getElementById("loginbtn").disabled = true;
     emailAddressErr.innerHTML = "Username is required";
   } else if (!validEmailAddress.test(emailAddressValue)) {
+    document.getElementById("loginbtn").disabled = true;
     emailAddressErr.innerHTML =
-      "";
+      "Username must be atleast 4 characters long";
   } else {
     emailAddressErr.innerHTML = "";
     return true;
   }
 };
 
-logmail.oninput = function () {
+userName.oninput = function () {
   emailAddressValidation();
 };
 
