@@ -1,29 +1,70 @@
-function addfile() {
+function viewfileModalbox() {
+  document.getElementById("fileupload").click();
+}
+
+function viewfolderModalbox() {
+  document.getElementById("folderupload").click();
+}
+
+async function addfile() {
   try {
-    var form = document.getElementById("Fileinput");
+    var file = document.getElementById("fileupload").files[0];
+
     var data = new Date();
-    fetch("http://localhost:56072/api/Documents", {
-      body: JSON.stringify({
-        docName: form.value,
-        docContentType: "document",
-        docSize: 0,
-        docCreatedBy: sessionStorage.getItem("uid"),
-        docCreatedAt: data.toISOString(),
-        docFolderId: sessionStorage.getItem("fid"),
-        docIsDeleted: false,
-      }),
+
+    var formData = new FormData();
+
+    formData.append("file", file);
+
+    var requestOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((folderCreateResponse) => {
-      console.log(folderCreateResponse);
+
+      body: formData,
+    };
+
+    await fetch(
+      "http://localhost:56072/api/Documents/upload/" +
+        sessionStorage.getItem("uid") +
+        "/" +
+        data.toISOString() +
+        "/" +
+        sessionStorage.getItem("fid"),
+      requestOptions
+    ).then((fileCreateResponse) => {
+      console.log(fileCreateResponse);
+
       listFiles();
     });
   } catch (err) {
     console.log(err);
   }
 }
+
+// try {
+//   var form = document.getElementById("Fileinput");
+//   var data = new Date();
+//   fetch("http://localhost:56072/api/Documents", {
+//     body: JSON.stringify({
+//       docName: form.value,
+//       docContentType: "document",
+//       docSize: 0,
+//       docCreatedBy: sessionStorage.getItem("uid"),
+//       docCreatedAt: data.toISOString(),
+//       docFolderId: sessionStorage.getItem("fid"),
+//       docIsDeleted: false,
+//     }),
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   }).then((folderCreateResponse) => {
+//     console.log(folderCreateResponse);
+//     listFiles();
+//   });
+// } catch (err) {
+//   console.log(err);
+// }
+//   }
 
 function listFiles() {
   try {
@@ -51,7 +92,7 @@ function listFiles() {
           icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="del(${Documents.docId})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div style="height: 88%;width: 100%;display: inline-grid; justify-content: center">
-            <img onclick="openFiles()" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'>${fold}</div>`;
+              <img onclick="openFiles()" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'>${fold}</div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);

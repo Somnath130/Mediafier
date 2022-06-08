@@ -411,7 +411,7 @@ a:active {
 }
 
 #fileupload {
-    display: none;
+    /* display: none; */
 }
 
 #folderupload {
