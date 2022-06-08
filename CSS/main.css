@@ -41,9 +41,9 @@
 
 .boxtext1
 {
-    font-size: 55px;
+    font-size: 48px;
     margin-left: 5%;
-    margin-top: 20%;
+    margin-top: 10%;
     color: rgb(0, 0, 0);
     font-weight: 700;
 
@@ -57,7 +57,7 @@
     color:rgb(86, 86, 86);
     font-weight: 500;
     word-spacing: 3px;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
 }
 #buttons
 {
