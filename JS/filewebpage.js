@@ -64,7 +64,7 @@ function listFiles() {
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="del(${Documents.docId})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div style="height: 70%;width: 100%;display: inline-grid; justify-content: center">
               <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/google-docs.png'></div><div id="fileImageText">${fold}</div></div>`;
@@ -117,6 +117,45 @@ function search() {
   }
 }
 
+function deleteFileFunc(did) {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+
+  swalWithBootstrapButtons
+    .fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "No, cancel!",
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          "Deleted!",
+          "Your file has been deleted.",
+          "success",
+          del(did)
+        );
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        swalWithBootstrapButtons.fire(
+          "Cancelled",
+          "Your file is safe",
+          "error"
+        );
+      }
+    });
+}
+
+
+
 function del(did) {
   var d = "";
   var requestOptions = {
@@ -133,8 +172,10 @@ function del(did) {
 }
 
 function view(docId, docName, docCreatedBy, docCreatedAt) {
-  alert(
-    "docId:" +
+
+  Swal.fire({
+    title:
+      "docId:" +
       docId +
       "\n" +
       "docName:" +
@@ -145,8 +186,15 @@ function view(docId, docName, docCreatedBy, docCreatedAt) {
       "\n" +
       "docCreatedAt:" +
       docCreatedAt +
-      "\n"
-  );
+      "\n",
+    showClass: {
+      popup: "animate__animated animate__fadeInDown",
+    },
+    hideClass: {
+      popup: "animate__animated animate__fadeOutUp",
+    },
+  });
+
 }
 
 function onLoad() {
