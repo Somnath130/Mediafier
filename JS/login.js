@@ -196,7 +196,7 @@ window.onload = function () {
 var emailAddress = document.getElementById("logmail");
 var emailAddressValidation = function () {
   let emailAddressValue = emailAddress.value.trim();
-  let validEmailAddress = /^.{6,}$/;
+  let validEmailAddress = /^.{4,}$/;
   let emailAddressErr = document.getElementById("emailtag");
   emailAddressErr.style.color = "red";
   if (emailAddressValue == "") {

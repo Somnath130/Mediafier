@@ -41,7 +41,7 @@
 
 .boxtext1
 {
-    font-size: 48px;
+    font-size: 24px;
     margin-left: 5%;
     margin-top: 10%;
     color: rgb(0, 0, 0);
@@ -120,4 +120,5 @@
     box-shadow: 0 0 10px 0 #234B85 inset,
         0 0 10px 4px #234B85;
 }
+
 

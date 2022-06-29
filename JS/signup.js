@@ -49,14 +49,14 @@ var fValid = document.getElementById("signinput");
 
 var firstNameValidation = function () {
   let firstNameValue = fValid.value.trim();
-  let validFirstName = /^[A-Za-z]+$/;
+  let validFirstName = /^.{4,}$/;
   let firstNameErr = document.getElementById("fullnametag");
   firstNameErr.style.color = "red";
 
   if (firstNameValue == "") {
     firstNameErr.innerHTML = "Name is required";
   } else if (!validFirstName.test(firstNameValue)) {
-    firstNameErr.innerHTML = "Name must be only string without white spaces";
+    firstNameErr.innerHTML = "Username must be 4 characters long";
   } else {
     firstNameErr.innerHTML = "";
     return true;
