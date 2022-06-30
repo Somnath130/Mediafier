@@ -116,6 +116,7 @@ a:focus {
 a[aria-expanded="true"] {
     color: #fff;
     background: #001d4a;
+        border-radius: 0px 20px 20px 0px;
 }
 
 a[data-toggle="collapse"] {
