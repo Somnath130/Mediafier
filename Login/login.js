@@ -1,12 +1,9 @@
-
-
 var username2 = document.getElementById("logmail");
 var password2 = document.getElementById("loginpasswd");
 
 //Data authentication function
 
 var loginData = function myFunction() {
-  console.log("Inside the login Data");
   fetch("http://localhost:56072/api/Login", {
     method: "POST",
     mode: "cors",
@@ -37,7 +34,7 @@ function showstorage(data) {
 
 function loc() {
   if (sessionStorage.getItem("token") != null) {
-    window.location.href = "/home2.html";
+    window.location.href = "../Dashboard/home2.html";
   } else {
     alert("Login Credentials are wrong");
   }

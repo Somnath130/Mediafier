@@ -27,18 +27,18 @@ function listrecentFiles() {
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/info.png"><img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div class="favouriteICons">
           <div id="favouriteimg">
-          <img onclick="addFavouriteFile(${fid})" class="heart" src="./Images/heart.png" alt="likeimage">
-          <img onclick="removeFavourite(${fid})" class="like" src="./Images/like.png" alt="likeimage">
+          <img onclick="addFavouriteFile(${fid})" class="heart" src="../Images/heart.png" alt="likeimage">
+          <img onclick="removeFavourite(${fid})" class="like" src="../Images/like.png" alt="likeimage">
           </div>
           </div>
 
           <div class="imagefolderBox" style="display: block; justify-content: center">
           <div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
-              <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/google-docs.png'></div>
+              <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='../Images/Illustrations/google-docs.png'></div>
               <div id="fileImageText">${fold}</div>
               </div>`;
 

@@ -6,58 +6,67 @@ function viewfolderModalbox() {
   document.getElementById("folderupload").click();
 }
 
-function addCard() {
+async function addfile() {
   try {
-    var form = document.getElementById("FormControlInput1");
+    var file = document.getElementById("fileupload").files[0];
+
     var data = new Date();
-    fetch("http://localhost:56072/api/Folders", {
-      body: JSON.stringify({
-        foldersName: form.value,
-        foldersCreatedBy: sessionStorage.getItem("uid"),
-        foldersCreatedAt: data.toISOString(),
-        foldersIsdeleted: 0,
-      }),
+
+    var formData = new FormData();
+
+    formData.append("file", file);
+
+    var requestOptions = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }).then((folderCreateResponse) => {
-      console.log(folderCreateResponse);
-      listFolders();
+
+      body: formData,
+    };
+
+    await fetch(
+      "http://localhost:56072/api/Documents/upload/" +
+        sessionStorage.getItem("uid") +
+        "/" +
+        data.toISOString() +
+        "/" +
+        sessionStorage.getItem("fid"),
+      requestOptions
+    ).then((fileCreateResponse) => {
+      console.log(fileCreateResponse);
+
+      listFiles();
     });
   } catch (err) {
     console.log(err);
   }
 }
 
-function listFolders() {
+function listFiles() {
   try {
     var create = document.getElementById("folderContent");
     create.innerHTML = "";
     fetch(
-      "http://localhost:56072/api/Folders/" + sessionStorage.getItem("uid"),
+      "http://localhost:56072/api/Documents/" + sessionStorage.getItem("fid"),
       {
         method: "GET",
       }
     )
       .then((response) => response.json())
-      .then((folders) => {
-        folders.forEach((folder) => {
+      .then((documents) => {
+        documents.forEach((Documents) => {
           var folderBox = document.createElement("div");
           var divBox = document.getElementById("folderContent");
           folderBox.setAttribute("id", "box");
-          const fold = folder.foldersName;
-          const fid = folder.foldersId;
-          // console.log(fold);
+          const fold = Documents.docName;
+          const fid = Documents.docId;
+          console.log(fold);
           var icondiv = document.createElement("div");
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick='deleteFileFunc(${fid})' style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/info.png"><img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/trash.png">`;
 
-
-          folderBox.innerHTML = `<div id="imagefolderBox"><div id="favouriteimg"><img onclick="addFavourite(${fid})" class="heart" src="./Images/heart.png" alt="likeimage"><img onclick="removeFavourite();" class="like" src="./Images/like.png" alt="likeimage"></div><div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
-          <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4.5rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'></div><div id="folderImageText">${fold}</div> </div>`;
+          folderBox.innerHTML = `<div display: inline-grid; justify-content: center"><div id="favouriteimg"><img onclick="addFavouriteFile(${fid})" class="heart" src="../Images/heart.png" alt="likeimage"></div><div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
+              <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='../Images/Illustrations/google-docs.png'></div><div id="fileImageText">${fold}</div></div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);
@@ -68,34 +77,37 @@ function listFolders() {
   }
 }
 
-function openFiles(fid) {
-  sessionStorage.setItem("fid", fid);
-  window.location.href = "./filewebpage.html";
-}
-
 function search() {
   try {
     var create = document.getElementById("folderContent");
+
     var search1 = document.getElementById("inp");
+
     create.innerHTML = "";
+
     fetch(
       "http://localhost:56072/api/Folders/Folders/" +
         sessionStorage.getItem("uid") +
         "/" +
         search1.value,
+
       {
         method: "GET",
       }
     )
       .then((response) => response.json())
+
       .then((folders) => {
         folders.forEach((folder) => {
           var divBox = document.getElementById("folderContent");
-          var folderBox = document.createElement("div");
-          folderBox.setAttribute("id", "box");
-          const fold = folder.foldersName;
 
-          folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/folderadd.png'>${fold}</div>`;
+          var folderBox = document.createElement("div");
+
+          folderBox.setAttribute("id", "box");
+
+          const fold = folder.foldersName;
+          folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/google-docs.png'>${fold}</div>`;
+
           divBox.append(folderBox);
         });
       });
@@ -104,7 +116,7 @@ function search() {
   }
 }
 
-function deleteFileFunc(fid) {
+function deleteFileFunc(did) {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       confirmButton: "btn btn-success",
@@ -129,7 +141,7 @@ function deleteFileFunc(fid) {
           "Deleted!",
           "Your file has been deleted.",
           "success",
-          del(fid)
+          del(did)
         );
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         swalWithBootstrapButtons.fire(
@@ -141,41 +153,35 @@ function deleteFileFunc(fid) {
     });
 }
 
-function del(folderid) {
+function del(did) {
   var d = "";
   var requestOptions = {
     method: "PUT",
-
     body: d,
-
     redirect: "follow",
   };
-
-  let deleteurl = "http://localhost:56072/api/Folders/del/" + folderid;
-
+  let deleteurl = "http://localhost:56072/api/Documents/del/" + did;
   fetch(deleteurl, requestOptions)
     .then((response) => response.text())
-
-    .then((result) => console.log(listFolders()))
-
+    .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
-
+  location.reload();
 }
 
-function view(folderid, foldername, foldercreatedby, foldercreatedat) {
+function view(docId, docName, docCreatedBy, docCreatedAt) {
   Swal.fire({
     title:
-      "Folder id: " +
-      folderid +
+      "docId:" +
+      docId +
       "\n" +
-      "Folder name: " +
-      foldername +
+      "docName:" +
+      docName +
       "\n" +
-      "Folder created by: " +
-      foldercreatedby +
+      "docCreatedBy:" +
+      sessionStorage.getItem("Name") +
       "\n" +
-      "Folder created at: " +
-      foldercreatedat +
+      "docCreatedAt:" +
+      docCreatedAt +
       "\n",
     showClass: {
       popup: "animate_animated animate_fadeInDown",
@@ -185,31 +191,24 @@ function view(folderid, foldername, foldercreatedby, foldercreatedat) {
     },
   });
 }
-
-function logout() {
-  var logoutbtn = document.getElementById("log");
-  logoutbtn.location.href = "/home2.html";
-  sessionStorage.clear();
-}
-function onLoad() {
-  listFolders();
-}
-
-function addFavourite(folderid) {
+function addFavouriteFile(folderid) {
   var d = "";
   var requestOptions = {
     method: "PUT",
     body: d,
     redirect: "follow",
   };
-  let deleteurl = "http://localhost:56072/api/Folders/favourite/" + folderid;
+  let deleteurl = "http://localhost:56072/api/Documents/favFile/" + folderid;
 
   fetch(deleteurl, requestOptions)
     .then((response) => response.text())
 
-    .then((result) => console.log(listFolders()))
+    .then((result) => console.log(listFiles()))
 
     .catch((error) => console.log("error", error));
+}
+function onLoad() {
+  listFiles();
 }
 
 onLoad();

@@ -32,10 +32,10 @@ function listfavFolders() {
 
           folderBox.innerHTML = `<div id="imagefolderBox">
           <div id="favouriteimg">
-          <img onclick="removeFavourite(${fid})" class="like" src="./Images/like.png" alt="likeimage">
+          <img onclick="removeFavourite(${fid})" class="like" src="../Images/like.png" alt="likeimage">
           </div>
           <div id="folderBoxImage" style="display: inline-grid; justify-content: "center">
-          <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4.5rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/folderadd.png'>
+          <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4.5rem;width: 4rem;cursor:pointer;" src='../Images/Illustrations/folderadd.png'>
           </div>
           <div id="folderImageText">${fold}</div> 
           </div>`;

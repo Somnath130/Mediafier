@@ -18,10 +18,10 @@ function listFiles() {
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div style="width: 100%;display: inline-grid; justify-content: center;margin-top: 2rem;">
-                <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/google-docs.png'></div><div id="fileImageText">${fold}</div></div>`;
+                <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='../Images/Illustrations/google-docs.png'></div><div id="fileImageText">${fold}</div></div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);

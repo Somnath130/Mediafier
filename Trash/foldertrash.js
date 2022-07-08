@@ -22,11 +22,11 @@ function listdelFolders() {
 
           icondiv.setAttribute("id", "icondesign");
 
-          icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="deleteFolderFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
+          icondiv.innerHTML = `<img onclick='view(${folder.foldersId},"${folder.foldersName}",${folder.foldersCreatedBy},"${folder.foldersCreatedAt}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/info.png"><img onclick="deleteFolderFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="../Images/Illustrations/trash.png">`;
 
           folderBox.innerHTML = `<div id="imagefolderBox">
           <div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
-            <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4.5rem;width: 4rem;cursor:pointer;margin-top:2rem" src='Images/Illustrations/folderadd.png'></div><div id="folderImageText">${fold}</div> </div>`;
+            <img onclick="openFiles(${folder.foldersId})" id="folderImage" style="height: 4.5rem;width: 4rem;cursor:pointer;margin-top:2rem" src='../Images/Illustrations/folderadd.png'></div><div id="folderImageText">${fold}</div> </div>`;
 
           divBox.appendChild(folderBox);
           folderBox.appendChild(icondiv);
@@ -118,7 +118,7 @@ function search() {
           folderBox.setAttribute("id", "box");
           const fold = folder.foldersName;
 
-          folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='./Images/Illustrations/folderadd.png'>${fold}</div>`;
+          folderBox.innerHTML = `<div style="height: 100%;width: 100%;display: inline-grid; justify-content: center"><img style="height: 4rem;width: 4rem;" src='../Images/Illustrations/folderadd.png'>${fold}</div>`;
           divBox.append(folderBox);
         });
       });
@@ -153,7 +153,7 @@ function view(folderid, foldername, foldercreatedby, foldercreatedat) {
 
 function logout() {
   var logoutbtn = document.getElementById("log");
-  logoutbtn.location.href = "/login.html";
+  logoutbtn.location.href = "../Login/login.html";
   sessionStorage.clear();
 }
 function onLoad() {
