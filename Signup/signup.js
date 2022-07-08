@@ -44,7 +44,7 @@ function signUpSuccess() {
       console.log("inside the fetch function");
       console.log(result.value);
       
-      window.location.href = `login.html`;
+      window.location.href = `../Login/login.html`;
     }
   
   });
