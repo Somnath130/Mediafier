@@ -11,5 +11,7 @@ namespace mediafierWebApp.RequestModel
         public int? FoldersCreatedBy { get; set; }
         public DateTime? FoldersCreatedAt { get; set; }
         public bool? FoldersIsdeleted { get; set; }
+
+        public bool? Isfavourite { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -9,52 +9,40 @@
   <link rel="icon" type="image/ico" href="./Images/cloud.png" />
 
   <!----======== CSS ======== -->
-  <link rel="stylesheet" href="./CSS/filewebpage.css" />
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="./Trash/foldertrash.css" />
 
   <!----===== Iconscout CSS ===== -->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
 
-
+  <script async src="https://kit.fontawesome.com/aeb61d4bc3.js" crossorigin="anonymous"></script>
 
   <title>Mediafier</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
-  <script async src="https://kit.fontawesome.com/aeb61d4bc3.js" crossorigin="anonymous"></script>
 
-<body >
-   <div class="wrapper">
+<body onload="listdelFolders()">
+
+
+  <div class="wrapper">
   <!-- Sidebar  -->
   <nav id="sidebar">
     <div class="sidebar-header">
       <img class="logo" src="./Images/cloud.png" alt="logo" srcset=""><h3>Mediafier</h3>
     </div>
+
     <ul class="list-unstyled components">
-       <li>
-        
-        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><img class="addicon" src="./Images/Illustrations/addition.png" alt="addicon">Upload</a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
-          <li class="uploadItemList">
-            <a  href="#" data-toggle="modal" data-target="#modalbox">Upload a file</a>
-          </li>
-        </ul>
-      </li>
-      <li>
+      <li >
        <a href="./home2.html"><i class="uil uil-cloud fa-xl"></i>&nbsp;&nbsp;My Drive</a>
       </li>
-      <li >
-        <a href="./favouritefile.html"><i class="uil uil-heart-alt fa-xl"></i>&nbsp;&nbsp;Favourites</a>
+      <li>
+        <a href="./favourite.html"><i class="uil uil-heart-alt fa-xl"></i>&nbsp;&nbsp;Favourites</a>
       </li>
       <li>
         <a href="./recent.html"><i class="uil uil-clock fa-xl"></i>&nbsp;&nbsp;Recents</a>
       </li>
-      <li>
+      <li  class="active">
         <a href="./trash.html"><i class="uil uil-trash-alt fa-xl"></i>&nbsp;&nbsp;Trash</a>
       </li>
       <li>
@@ -63,41 +51,6 @@
     </ul>
     </ul>
   </nav>
-
-
- <!-- file upload modal -->
-  <div
-      class="modal fade"
-      id="modalbox"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenter"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="uploadmodal">Upload file</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-
-            <img src="./Images/Illustrations/upload.png" alt="file image" class="fileimage">
-          </div>
-          <div class="modal-footer" id="modal_footer">
-            <div ><input type="file" id="fileupload" multiple/></div>
-            <div><button onclick="addfile()" value="upload" type="button" class="btn btn-primary" data-dismiss="modal">Upload</button></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
   <!-- Page Content  -->
   <div id="content">
@@ -109,7 +62,7 @@
       <input
         type="search"
         class="form-control rounded"
-        placeholder="Search in drive"
+        placeholder="Search in trash"
         aria-label="Search"
         aria-describedby="search-addon"
         id="inp"
@@ -130,11 +83,10 @@
       </div>
     </nav>
 
-    <h2 class="contentHeading">My Files</h2>
-
+    <h2>Trash</h2>
 <div id="folderContent">
 
-    
+  
 </div>
 
 
@@ -155,6 +107,7 @@
 </body>
 
 </html>
-  <script src="./JS/filewebpage.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="./Trash/foldertrash.js"></script>

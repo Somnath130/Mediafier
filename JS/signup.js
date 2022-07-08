@@ -7,6 +7,7 @@ var abc = new Date();
 // su.addEventListener("click",
 
 var linkFetch = function myFunction() {
+  debugger;
   console.log("inside link fetch function");
 
   fetch("http://localhost:56072/Signup", {
@@ -29,6 +30,10 @@ var linkFetch = function myFunction() {
 };
 
 function signUpSuccess() {
+
+    debugger;
+  console.log("before swal function call");
+  // linkFetch();
   Swal.fire({
     title: "<strong>Success</strong>",
     icon: "success",
@@ -36,12 +41,16 @@ function signUpSuccess() {
     confirmButtonText: `Login Here`,
   }).then((result) => {
     if (result.value) {
-      // console.log("aaaaa=>", result.value);
-
-      linkFetch();
+      console.log("inside the fetch function");
+      console.log(result.value);
+      
       window.location.href = `login.html`;
     }
+  
   });
+  linkFetch();
+  
+
 }
 
 //Full name validation

@@ -22,14 +22,14 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 
-<body >
+<body onload="listFiles()">
 
 
   <div class="wrapper">
   <!-- Sidebar  -->
   <nav id="sidebar">
     <div class="sidebar-header">
-      <img src="./Images/cloud.png" alt="logo" srcset=""><h3>Mediafier</h3>
+      <img class="logo" src="./Images/cloud.png" alt="logo" srcset=""><h3>Mediafier</h3>
     </div>
 
     <ul class="list-unstyled components">
@@ -43,7 +43,7 @@
         <a href="./recent.html"><i class="uil uil-clock fa-xl"></i>&nbsp;&nbsp;Recents</a>
       </li>
       <li  class="active">
-        <a href="./trash.html"><i class="uil uil-trash-alt fa-xl"></i>&nbsp;&nbsp;Trash</a>
+        <a href="./folderTrash.html"><i class="uil uil-trash-alt fa-xl"></i>&nbsp;&nbsp;Trash</a>
       </li>
       <li>
         <a href="./login.html"><i class="uil uil-signout fa-xl"></i>&nbsp;&nbsp;Log Out</a>
@@ -84,90 +84,7 @@
     <h2>Trash</h2>
 <div id="folderContent">
 
-    <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-
-     <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-
-     <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-
-         <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-
-         <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-
-         <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-
-         <div id="box">
-        <div id="folderBox">
-            <div id="folderImage">
-                <img src="./Images/Illustrations/folderadd.png" alt="foldericon" srcset="">
-            </div>
-
-            <div id="infoicons">
-                
-            </div>
-        </div>
-    </div>
-    
+  
 </div>
 
 
@@ -191,4 +108,4 @@
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  <script src="./favourite/favourite.js"></script>
+  <script src="./Trash/trash.js"></script>

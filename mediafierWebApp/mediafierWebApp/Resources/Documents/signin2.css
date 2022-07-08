@@ -1,12 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Comfortaa',
-        cursive;
+
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       font-family: 'Comfortaa',
+       cursive;
 
 }
-
 .header {
     min-height: 100vh;
     width: 100%;
@@ -31,7 +31,7 @@ nav {
     height: 40px;
     width: 70px;
     padding: 0px 15px 0px 0px;
-    margin-left: 70px;
+    margin-left: 30px;
 
 }
 
@@ -39,16 +39,16 @@ nav {
     height: 40px;
     width: 70px;
     padding: 0px 15px 0px 0px;
-    /* margin-left: -90px; */
-    margin-left: -35%;
-    margin-bottom: 30px;
+    margin-left: -50px;
+   margin-left: 30%;
+   margin-bottom: 30px;
 
 }
 
 .nav-links {
     flex: 1;
     text-align: right;
-    opacity: 0;
+ opacity: 0;
 }
 
 .nav-links ul li {
@@ -103,7 +103,7 @@ nav {
 
 
 
-body {
+body{
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -116,101 +116,96 @@ body {
     background-size: cover;
 }
 
-.container {
+.container
+{
     max-width: 850px;
     background: white;
-    width: 100%;
-    padding: 40px 30px;
+    width:100%;
+    padding:40px 30px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     margin-top: 50px;
     border-radius: 20px;
     margin-left: 500px;
 }
 
-.container .form {
+.container .form
+{
     height: 100%;
     width: 100%;
     background: #fff;
 }
-
-.container .form-content {
+.container .form-content
+{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#leftbox {
-    height: 400px;
-    width: 400px;
+#leftbox
+
+{
+height: 400px;
+width:400px;
 }
 
-form .form-content .title {
-    position: relative;
+form .form-content .title
+{
+        position: relative;
     font-size: 35px;
     font-weight: 500;
-    color: #333;
-    margin-left: -60%;
+    color:#333;
+   left:56px;
 }
-
-/* form .form-content .title:before
+form .form-content .input-boxes
 {
-    content:'';
-    position: absolute;
-    height: 3px;
-    left:0;
-    bottom:0;
-    width: 90px;
-    background: #7d2ae8;
-} */
-form .form-content .input-boxes {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: -100px;
+margin-top:30px;
+margin-bottom: 30px;
 }
 
-form .form-content .input-box {
-    display: flex;
+form .form-content .input-box
+{
+        display: flex;
     align-items: center;
     height: 50px;
     width: 100%;
-    margin: 0 -40px;
+    margin:0 -40px;
 }
-
-.form-content .input-box input {
-    height: 100%;
-    width: 100%;
+.form-content .input-box input{
+    height:100%;
+    width:100%;
     outline: none;
     border: none;
-    padding: 0;
+    padding:0;
     font-size: 16px;
     font-weight: 500;
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 
-form .form-content .bottomsign {
+form .form-content .bottomsign
+
+{
     font-size: 14px;
     font-weight: 500;
-    color: #333;
-    margin-top: 30px;
-    margin-left: -35px;
+    color:#333;
+    margin-top: 20px;
+    margin-left: -40px;
 
 }
-
 form .form-content .bottomsign a {
     text-decoration: none;
 }
 
-form .form-content .bottomsign a:hover {
+form .form-content .bottomsign a:hover
+{
     text-decoration: underline;
 }
-
-form .form-content .button {
-    color: #fff;
+form .form-content .button
+{
+    color:#fff;
     margin-top: 40px;
 }
-
-form .form-content .button input {
-    color: #fff;
+form .form-content .button input{
+    color:#fff;
     background: #7d2ae8;
     border-radius: 10px;
     padding: 0px;
@@ -218,26 +213,27 @@ form .form-content .button input {
     transition: all 0.4s ease;
 }
 
-form .form-content .button input:hover {
+form .form-content .button input:hover{
     background: #5b13b9;
 }
 
-form .form-content label {
-    color: #5b13b9;
+form .form-content label{
+    color:#5b13b9;
     cursor: pointer;
     margin-top: 30px;
 }
 
-form .form-content label:hover {
+form .form-content label:hover{
     text-decoration: underline;
 }
+
 
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
-    width: 68px;
+    width: 70px;
     background: #11101D;
     padding: 6px 14px;
     z-index: 99;
@@ -245,7 +241,7 @@ form .form-content label:hover {
 }
 
 .sidebar.open {
-    width: 230px;
+    width: 220px;
 }
 
 .sidebar .logo-details {

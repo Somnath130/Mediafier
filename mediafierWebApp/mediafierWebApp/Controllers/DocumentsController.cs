@@ -34,29 +34,12 @@ namespace mediafierWebApp.Controllers
             return Ok(res);
         }
 
-
-
-        // POST: api/Documents
-        [HttpPost]
-        public void Post([FromBody] DocumentRequest value)
-        {
-            Document obj = new Document();
-            obj.DocName = value.DocName;
-            obj.DocContentType = value.DocContentType;
-            obj.DocSize = value.DocSize;
-            obj.DocCreatedBy = value.DocCreatedBy;
-            obj.DocCreatedAt = value.DocCreatedAt;
-            obj.DocFolderId = value.DocFolderId;
-            obj.DocIsDeleted = value.DocIsDeleted;
-            _mediafiercontext.Document.Add(obj);
-            _mediafiercontext.SaveChanges();
-        }
         [HttpGet("{id:int}")]
         public IActionResult Get(int id)
         {
             try
             {
-                var result = _mediafiercontext.Document.Where(o => o.DocFolderId == id);
+                var result = _mediafiercontext.Document.Where(o => o.DocFolderId == id && o.DocIsDeleted == false);
                 if (result == null) return NotFound();
                 return Ok(result);
             }
@@ -68,10 +51,6 @@ namespace mediafierWebApp.Controllers
         }
 
         // PUT: api/Documents/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
@@ -113,6 +92,7 @@ namespace mediafierWebApp.Controllers
 
                         obj.DocFolderId = docFolderId;
                         obj.DocIsDeleted = false;
+                        obj.IsFavourite = false;
 
                     };
                     file.CopyTo(stream);
@@ -122,6 +102,31 @@ namespace mediafierWebApp.Controllers
             }
             //return Ok(new { count = files.Count, fsize });
             return Ok();
+        }
+
+        [HttpPut("del/{id}")]
+        public void SoftDelete(int id)
+        {
+            var delete = _mediafiercontext.Document.First(res => res.DocId == id);
+            delete.DocIsDeleted = true;
+            _mediafiercontext.Document.Update(delete);
+            _mediafiercontext.SaveChanges();
+        }
+        [HttpPut("favFile/{id}")]
+        public void favFile(int id)
+        {
+            var fav = _mediafiercontext.Document.First(res => res.DocId == id);
+            fav.IsFavourite = true;
+            _mediafiercontext.Document.Update(fav);
+            _mediafiercontext.SaveChanges();
+        }
+        [HttpPut("removefavourite/{id}")]
+        public void removeFavourites(int id)
+        {
+            var favFold = _mediafiercontext.Document.First(res => res.DocId == id);
+            favFold.IsFavourite = false;
+            _mediafiercontext.Document.Update(favFold);
+            _mediafiercontext.SaveChanges();
         }
     }
 }

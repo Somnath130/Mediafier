@@ -7,6 +7,7 @@ namespace mediafierWebApp.RequestModel
 {
     public class DocumentRequest
     {
+
         public string DocName { get; set; }
         public string DocContentType { get; set; }
         public int? DocSize { get; set; }
@@ -14,5 +15,8 @@ namespace mediafierWebApp.RequestModel
         public DateTime? DocCreatedAt { get; set; }
         public int? DocFolderId { get; set; }
         public bool? DocIsDeleted { get; set; }
+
+        public bool? Isfavourite { get; set; }
+
     }
 }

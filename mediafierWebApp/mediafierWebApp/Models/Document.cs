@@ -13,6 +13,7 @@ namespace mediafierWebApp.Models
         public DateTime? DocCreatedAt { get; set; }
         public int? DocFolderId { get; set; }
         public bool? DocIsDeleted { get; set; }
+        public bool? IsFavourite { get; set; }
 
         public Users DocCreatedByNavigation { get; set; }
         public Folders DocFolder { get; set; }

@@ -19,8 +19,10 @@ namespace mediafierWebApp.Models
         public virtual DbSet<Folders> Folders { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
+
         // Unable to generate entity type for table 'dbo.Table_1'. Please see the warning messages.
         // Unable to generate entity type for table 'dbo.Table_bootcamp'. Please see the warning messages.
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

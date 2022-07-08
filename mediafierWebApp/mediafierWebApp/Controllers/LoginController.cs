@@ -24,8 +24,10 @@ namespace mediafierWebApp.Controllers
 
         public LoginController(IConfiguration config, MediafierContext a)
         {
-            _config = config;
-            _mediafiercontext = a;
+
+                _config = config;
+                _mediafiercontext = a;
+
         }
         [AllowAnonymous]
         [HttpPost]
@@ -39,7 +41,10 @@ namespace mediafierWebApp.Controllers
                 var tokenString = BuildToken(user);
                 response = Ok(new { token = tokenString,id=uid });
                 return response;
-            }else
+            }
+
+            else
+
             return Unauthorized();
         }
         private string BuildToken(UserRequest user)

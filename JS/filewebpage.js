@@ -40,7 +40,6 @@ async function addfile() {
   }
 }
 
-
 function listFiles() {
   try {
     var create = document.getElementById("folderContent");
@@ -66,7 +65,7 @@ function listFiles() {
 
           icondiv.innerHTML = `<img onclick='view(${Documents.docId},"${Documents.docName}",${Documents.docCreatedBy},"${Documents.docCreatedAt}","${Documents.docFolderId}","${Documents.docIsDeleted}")'  style="height: 1.3rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/info.png"><img onclick="deleteFileFunc(${fid})" style="height: 1.5rem;width: 1.3rem;float:right;cursor:pointer;" src="Images/Illustrations/trash.png">`;
 
-          folderBox.innerHTML = `<div style="height: 70%;width: 100%;display: inline-grid; justify-content: center">
+          folderBox.innerHTML = `<div display: inline-grid; justify-content: center"><div id="favouriteimg"><img onclick="addFavouriteFile(${fid})" class="heart" src="./Images/heart.png" alt="likeimage"></div><div id="folderBoxImage" style="height: 88%;width: 100%;display: inline-grid; justify-content: "center">
               <img onclick="openFiles()" id="folderImage" style="height: 4rem;width: 4rem;cursor:pointer;" src='Images/Illustrations/google-docs.png'></div><div id="fileImageText">${fold}</div></div>`;
 
           divBox.appendChild(folderBox);
@@ -154,16 +153,14 @@ function deleteFileFunc(did) {
     });
 }
 
-
-
 function del(did) {
   var d = "";
   var requestOptions = {
-    method: "DELETE",
+    method: "PUT",
     body: d,
     redirect: "follow",
   };
-  let deleteurl = "http://localhost:56072/api/Documents/" + did;
+  let deleteurl = "http://localhost:56072/api/Documents/del/" + did;
   fetch(deleteurl, requestOptions)
     .then((response) => response.text())
     .then((result) => console.log(result))
@@ -172,7 +169,6 @@ function del(did) {
 }
 
 function view(docId, docName, docCreatedBy, docCreatedAt) {
-
   Swal.fire({
     title:
       "docId:" +
@@ -182,21 +178,35 @@ function view(docId, docName, docCreatedBy, docCreatedAt) {
       docName +
       "\n" +
       "docCreatedBy:" +
-      docCreatedBy +
+      sessionStorage.getItem("Name") +
       "\n" +
       "docCreatedAt:" +
       docCreatedAt +
       "\n",
     showClass: {
-      popup: "animate__animated animate__fadeInDown",
+      popup: "animate_animated animate_fadeInDown",
     },
     hideClass: {
-      popup: "animate__animated animate__fadeOutUp",
+      popup: "animate_animated animate_fadeOutUp",
     },
   });
-
 }
+function addFavouriteFile(folderid) {
+  var d = "";
+  var requestOptions = {
+    method: "PUT",
+    body: d,
+    redirect: "follow",
+  };
+  let deleteurl = "http://localhost:56072/api/Documents/favFile/" + folderid;
 
+  fetch(deleteurl, requestOptions)
+    .then((response) => response.text())
+
+    .then((result) => console.log(listFiles()))
+
+    .catch((error) => console.log("error", error));
+}
 function onLoad() {
   listFiles();
 }

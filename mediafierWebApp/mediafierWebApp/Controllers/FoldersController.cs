@@ -31,7 +31,7 @@ namespace mediafierWebApp.Controllers
         {
             try
             {
-                var result = _mediafiercontext.Folders.Where(o => o.FoldersCreatedBy == id);
+                var result = _mediafiercontext.Folders.Where(o => o.FoldersCreatedBy == id && o.FoldersIsdeleted == false);
                 if (result == null) return NotFound();
                 return Ok(result);
             }
@@ -44,38 +44,51 @@ namespace mediafierWebApp.Controllers
 
         // POST: api/Folders
         [HttpPost]
-            public void Post([FromBody] FoldersRequest value)
-            {
-                Folders obj = new Folders();
-                obj.FoldersName = value.FoldersName;
-                obj.FoldersCreatedBy = value.FoldersCreatedBy;
-                obj.FoldersCreatedAt = value.FoldersCreatedAt;
-                obj.FoldersIsdeleted = value.FoldersIsdeleted;
+        public void Post([FromBody] FoldersRequest value)
+        {
+            Folders obj = new Folders();
+            obj.FoldersName = value.FoldersName;
+            obj.FoldersCreatedBy = value.FoldersCreatedBy;
+            obj.FoldersCreatedAt = value.FoldersCreatedAt;
+            obj.FoldersIsdeleted = value.FoldersIsdeleted;
+            obj.FoldersIsdeleted = false;
+            obj.IsFavourite = false;
+
             _mediafiercontext.Folders.Add(obj);
             _mediafiercontext.SaveChanges();
-            }
+        }
         [HttpGet("Folders/{id}/{value}")]
-        public IActionResult Get(int id,string value)
+        public IActionResult Get(int id, string value)
         {
             var result = _mediafiercontext.Folders.Where(obj => obj.FoldersName.Contains(value));
             return Ok(result);
         }
 
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpPut("del/{id}")]
+        public void SoftDelete(int id)
         {
-            //var folds = _mediafiercontext.Folders.Where(res => res.FoldersId == id).ToList();
-            //folds.ForEach(res => _mediafiercontext.Folders.Remove(res));
-           // _mediafiercontext.SaveChanges();
-
-           var folds = _mediafiercontext.Document.Where(result => result.DocFolderId == id).ToList();
-            folds.ForEach(result => _mediafiercontext.Document.Remove(result));
-            _mediafiercontext.SaveChanges();
-            var res = _mediafiercontext.Folders.Where(result => result.FoldersId == id).ToList();
-            res.ForEach(result => _mediafiercontext.Folders.Remove(result));
+            var deleteFold = _mediafiercontext.Folders.First(res => res.FoldersId == id);
+            deleteFold.FoldersIsdeleted = true;
+            _mediafiercontext.Folders.Update(deleteFold);
             _mediafiercontext.SaveChanges();
         }
-    }
+        [HttpPut("favourite/{id}")]
+        public void Favourites(int id)
+        {
+            var favFold = _mediafiercontext.Folders.First(res => res.FoldersId == id);
+            favFold.IsFavourite = true;
+            _mediafiercontext.Folders.Update(favFold);
+            _mediafiercontext.SaveChanges();
+        }
+        [HttpPut("removefavourite/{id}")]
+        public void removeFavourites(int id)
+        {
+            var favFold = _mediafiercontext.Folders.First(res => res.FoldersId == id);
+            favFold.IsFavourite = false;
+            _mediafiercontext.Folders.Update(favFold);
+            _mediafiercontext.SaveChanges();
+        }
 
     }
 
+}

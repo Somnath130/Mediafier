@@ -230,10 +230,9 @@ a.article:hover {
 }
 
 #folderBoxImage {
-    height: 88%;
-    width: 100%;
     display: inline-grid;
     justify-content: center;
+    margin-bottom: 1rem;
 }
 
 
@@ -272,9 +271,9 @@ a.article:hover {
 
 #icondesign {
     display: inline-flex;
-    justify-content: right;
+    justify-content: space-between;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .dropdown-menu>a:hover {
@@ -332,12 +331,6 @@ a.article:hover {
     height: 3rem;
     width: 3rem;
     margin-right: 1rem;
-}
-
-#fileImageText
-{
-    display: flex;
-    justify-content: center;
 }
 
 
